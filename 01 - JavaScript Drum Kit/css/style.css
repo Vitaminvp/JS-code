@@ -1,0 +1,85 @@
+:root {
+    --yellow: #ffc600;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+    font-size: 14px;
+}
+
+body {
+    background-image: url(../img/muzyka_1680x1050.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.music-wrapper {
+    margin: 0px auto;
+    max-width: 1140px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+
+
+.keys {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.key {
+    border: .3rem solid #250403;
+    border-radius: .7rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    padding: 1rem .5rem;
+    transition: all .07s ease;
+    max-width: 10rem;
+    min-width: 6rem;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    text-shadow: 0 0 .5rem black;
+    cursor: pointer;
+}
+.key:hover{
+    border: .3rem solid #47110f;
+    
+}
+.key {
+    margin-left: 0.5rem;
+
+}
+
+.playing {
+    transform: scale(1.1);
+    border-color: var(--yellow);
+    box-shadow: 0 0 1rem var(--yellow);
+}
+
+.key > kbd {
+    display: block;
+    font-size: 3rem;
+}
+
+.sound {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: var(--yellow);
+}
