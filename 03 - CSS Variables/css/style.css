@@ -1,5 +1,7 @@
 :root {
-    --blue: #018DED;
+    --base: #ffc600;
+    --spacing: 20px;
+    --blur: 10px;
 }
 * {
     padding: 0;
@@ -35,4 +37,12 @@ body {
 }
 input {
     width: 150px;
+}
+img {
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+}
+.js{
+    color: var(--base);
 }
