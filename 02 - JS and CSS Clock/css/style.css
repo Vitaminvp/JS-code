@@ -48,7 +48,7 @@ body {
     font-size: 1.5rem;
     margin-top: 1rem;
     padding: 1rem .5rem;
-    transition: all .05s ease;
+    transition: all .07s ease;
     max-width: 10rem;
     min-width: 6rem;
     text-align: center;
@@ -57,13 +57,10 @@ body {
     text-shadow: 0 0 .5rem black;
     cursor: pointer;
 }
-/*
 .key:hover{
     border: .3rem solid #47110f;
-    background: rgba(0, 0, 0, 0.6);
     
 }
-*/
 .key {
     margin-left: 0.5rem;
 
