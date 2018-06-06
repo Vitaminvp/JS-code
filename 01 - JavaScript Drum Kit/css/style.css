@@ -43,36 +43,48 @@ body {
 }
 
 .key {
-    border: .3rem solid #250403;
+    box-sizing: border-box;
     border-radius: .7rem;
     font-size: 1.5rem;
     margin-top: 1rem;
     padding: 1rem .5rem;
     transition: all .05s ease;
     max-width: 10rem;
-    min-width: 6rem;
+    min-width: 8rem;
     text-align: center;
     color: white;
     background: rgba(0, 0, 0, 0.4);
     text-shadow: 0 0 .5rem black;
     cursor: pointer;
+    position: relative;
+    margin-left: 0.5rem;
 }
-/*
-.key:hover{
+.key:hover > div{
     border: .3rem solid #47110f;
+    
+}
+.key:hover{
     background: rgba(0, 0, 0, 0.6);
     
 }
-*/
-.key {
-    margin-left: 0.5rem;
-
+.key > div {
+    border-radius: .7rem;
+    border: .3rem solid #250403;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
 }
 
 .playing {
     transform: scale(1.1);
     border-color: var(--yellow);
     box-shadow: 0 0 1rem var(--yellow);
+}
+.playing > div{
+        border: .3rem solid var(--yellow);
 }
 
 .key > kbd {
