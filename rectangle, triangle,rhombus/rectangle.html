@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>js 02</title>
+</head>
+<style>
+    * {
+        font-family: monospace;
+        margin: 50px;
+        padding: 0;
+        font-size: 18px;
+        line-height: 12px;
+    }
+</style>
+<script>
+    var rec_w = +prompt("Введите ширину прямоугольника", "9");
+    var rec_h = +prompt("Введите высоту прямоугольника", "6");
+
+
+
+    for (let i = 1; i <= rec_h; i++) {
+        for (let j = 1; j <= rec_w; j++) {
+            if (j == 1 || i == 1 || i == rec_h || j == rec_w) {
+                document.write("*");
+            } else {
+                document.write("&nbsp;");
+            }
+        }
+        document.write("<br>");
+    }
+
+    function PaintLine(a) {
+        for (i = 0; i < a; i++)
+            document.write("*");
+        document.write("</br>");
+    }
+
+    function PaintPrm(f, g) {
+        for (k = 0; k < g; k++)
+            PaintLine(f);
+    }
+    PaintPrm(10, 10);
+
+    //function PaintLine(a)
+    //{
+    //  for (i = 0; i < a; i++)
+    //    document.write("*");
+    //  document.write("</br>");
+    //}
+    //function PaintLinePust(t)
+    //{
+    //  s = "";
+    //  for (c = 0; c < t; c++)
+    //    if ((c == 0) || (c == t-1))
+    //      document.write("*");
+    //    else
+    //      document.write("&nbsp");  //по середине строки печатаем пробелы(&nbsp), к сожалению пробелы по физическому 
+    //  document.write("</br>");  //размеру меньше чем "*", поэтому пришлось использовать "_", подсказали что два
+    //}                           //пробела по ширине равны ширине *. Поэтому меняем на &nbsp&nbsp
+    //function PaintPrm(f, g)
+    //{
+    //  for(k=0; k < g; k++)
+    //  {  
+    //    if ((k == 0) || (k == g - 1))
+    //      PaintLine(f);
+    //    else
+    //      PaintLinePust(f);
+    //  }
+    //}
+    //PaintPrm(15, 5);
+    //    var a  =  +prompt("Введите ширину ромба", "10");
+    //    var tr_w  =  +prompt("Введите сторону равностороннего треугольника", "9");
+
+    //for (var i = 0; i < a; i++) {               
+    //     for (var j = a; j >= a-i; j--) {
+    //      if(j < i+1){
+    //         continue;
+    //           }
+    //          document.write("&nbsp * ");                   
+    //        }
+    //  document.write("<br/>");
+    //}
+
+    //for (var i = 0; i < a; i++) {               
+    //     for (var j = 0; j < Math.ceil(a/2); j++) {
+    //      j >= Math.abs(i+1-Math.ceil(a/2)) ? document.write("&nbsp; * ") : document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");                   
+    //        }
+    //  document.write("<br/>");
+    //}
+
+    //for (var i = 0; i < a; i++) {               
+    //     for (var j = a; j >= a-i; j--) {
+    //      if(j < i+1){
+    //         continue;
+    //           }
+    //          document.write("&nbsp * ");                   
+    //        }
+    //  document.write("<br/>");
+    //}
+    //var horizCount = 10;
+    //var vertCount = 5;
+    //var fullstr = '*'.repeat(10);
+    //
+    //for (var i = 0; i < vertCount; ++i) {
+    //  var str = (i == 0 || i == vertCount - 1) ? fullstr : '*' + (' '.repeat(horizCount - 2)) + '*';     
+    //  console.log(str);  
+    //}
+</script>
+
+<body>
+
+    <script src="js/script.js" type="text/jscript"></script>
+</body>
+
+</html>
