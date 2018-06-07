@@ -36,11 +36,13 @@
     //    var bornIn50s = inventors.filter(function(item){
     //        if ( item.year > 1499 && item.year < 1600) return true;
     //    });
-        var bornIn50s = inventors.filter(item => (item.year > 1499 && item.year < 1600));
-    console.table(bornIn50s);
-
+var bornIn50s = inventors.filter(item => (item.year > 1499 && item.year < 1600));
+console.table(bornIn50s);
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
+
+var fullName = inventors.map( item => `${item.first} ${item.last}` );
+console.table(fullName);
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
