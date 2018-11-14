@@ -1,6 +1,6 @@
 var defaultAudio = document.querySelector(`audio[data-key="76"]`);
 
-window.addEventListener("keydown", function(e){
+window.addEventListener("keydown", (e) => {
     
     //console.log(e.keyCode);
     
