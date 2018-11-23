@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 57483084780168afa701ac63d47b577547242401
 var Harshad = ( function() {
     'use strict';
 
@@ -34,4 +38,8 @@ console.log("Harshad.getNext(1)", Harshad.getNext(1));   //      ==>  2
 console.log("Harshad.getNext(18)", Harshad.getNext(18));   //      ==>  20
 console.log("Harshad.getNext(1000)", Harshad.getNext(1000));   //      ==>  1002
 console.log("Harshad.getSerie(3)", Harshad.getSerie(3));   //    ==>  [ 1, 2, 3 ]
+<<<<<<< HEAD
 console.log("Harshad.getSerie(3, 1000)", Harshad.getSerie(3, 1000));   //    ==>  [ 1002, 1008, 1010 ]
+=======
+console.log("Harshad.getSerie(3, 1000)", Harshad.getSerie(3, 1000));   //    ==>  [ 1002, 1008, 1010 ]
+>>>>>>> 57483084780168afa701ac63d47b577547242401

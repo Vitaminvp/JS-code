@@ -6,7 +6,6 @@
            }
        }
        function sol(N) {
-           // write your code in JavaScript (Node.js 8.9.4)
            for(let i = N; i>=0; i--){
                if(F(i) <= N) return i;
 
