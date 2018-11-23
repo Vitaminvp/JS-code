@@ -1,24 +1,38 @@
 function chooseBestSum(distance, number, ls) {
     const arr = [...ls];
-    let max = 0;
-    if(arr.length > number){
-        const head = [...arr].splice(0, number);
-        const tail = [...arr].splice(number);
-        max = head.reduce((sum, current) => sum+ current, 0);
-        for(let i=0; i< number; i++)
-            for(let j=0; j< tail.length; j++) {
-                // if(i !== j ){
-                const headnext = [...head];
-                headnext[i] = tail[j];
-                console.log("headnext", headnext);
-                const summ = headnext.reduce((sum, cur) => sum + cur, 0);
-                if (summ < distance)
-                    max = Math.max(max, summ);
-                    console.log("max", max);
-                // }
-            }
-    }
+    let max = null;
+
+    const reducer = (element = [], index = 0) => {
+        // console.log("element", element);
+        if(element.length === number) {
+            // console.log("element", element);
+            const summ = element.reduce((sum, cur) => sum + cur, 0);
+            // console.log("sum", summ);
+            if(summ <= distance)
+                max = Math.max(max, summ);
+            // console.log("max", max);
+            return max;
+        }
+        for(let i=index; i < arr.length; i++){
+            // console.log("i", i);
+            const newElement = [...element];
+            reducer(newElement.concat(arr[i]), i+1);
+        }
+    };
+
+        reducer();
+
+    return max;
 }
+
+
+
+console.log("chooseBestSum(230, 3, [91, 74, 73, 85, 73, 81, 87]) === 228 ", chooseBestSum(230, 3, [91, 74, 73, 85, 73, 81, 87]) === 228);
+console.log("chooseBestSum(163, 3, [50]) === null ", chooseBestSum(163, 3, [50]) === null);
+console.log("chooseBestSum(163, 3, [50, 55, 56, 57, 58]) === 163 ", chooseBestSum(163, 3, [50, 55, 56, 57, 58]) === 163);
+console.log("chooseBestSum(174, 3, [50, 55, 57, 58, 60]) === 173 ", chooseBestSum(174, 3, [50, 55, 57, 58, 60]) === 173);
+
+
 // John and Mary want to travel between a few towns A, B, C ... Mary has on a sheet of paper a list of distances between these towns. ls = [50, 55, 57, 58, 60]. John is tired of driving and he says to Mary that he doesn't want to drive more than t = 174 miles and he will visit only 3 towns.
 //
 // Which distances, hence which towns, they will choose so that the sum of the distances is the biggest possible
@@ -43,7 +57,3 @@ function chooseBestSum(distance, number, ls) {
 // ys = [91, 74, 73, 85, 73, 81, 87] choose_best_sum(230, 3, ys) -> 228
 
 
-// console.log("chooseBestSum(230, 3, [91, 74, 73, 85, 73, 81, 87]) === 228 ", chooseBestSum(230, 3, [91, 74, 73, 85, 73, 81, 87]) === 228);
-// console.log("chooseBestSum(163, 3, [50]) === null ", chooseBestSum(163, 3, [50]) === null);
-// console.log("chooseBestSum(163, 3, [50, 55, 56, 57, 58]) === 163 ", chooseBestSum(163, 3, [50, 55, 56, 57, 58]) === 163);
-console.log("chooseBestSum(174, 3, [50, 55, 57, 58, 60]) === 173 ", chooseBestSum(174, 3, [50, 55, 57, 58, 60]) === 173);
