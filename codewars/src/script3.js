@@ -1,20 +1,35 @@
-function parse( data )
-{
-    const arr =[];
-    let value = 0;
-    data.split('').map(item => {
-        switch(item) {
-            case 'i': value++;
-                break;
-            case 'd': value--;
-                break;
-            case 's': value = value**2;
-                break;
-            case 'o': arr.push(value);
-                break;
-            default: ;
-        }
-    });
-    return arr;
+function findNb(m) {
+    let res = 0;
+    let i=1;
+    while(res < m){
+        res += Math.pow(i, 3);
+        i++;
+    }
+    if(res == m) return(i-1);
+    return (-1);
 }
-console.log("parse(\"iiisdoso\") => [ 8, 64 ]", parse("iiisdoso"));
+// function findNb(m) {
+//     var n = 0
+//     while (m > 0) m -= ++n**3
+//     return m ? -1 : n
+// }
+console.log(findNb(1071225) == 45);
+console.log(findNb(4183059834009) == 2022);
+console.log(findNb(24723578342962)==-1);
+console.log(findNb(135440716410000)==4824);
+console.log(findNb(40539911473216)==3568);
+
+// Your task is to construct a building which will be a pile of n cubes. The cube at the bottom will have a volume of n^3, the cube above will have volume of (n-1)^3 and so on until the top which will have a volume of 1^3.
+//
+// You are given the total volume m of the building. Being given m can you find the number n of cubes you will have to build?
+//
+//     The parameter of the function findNb (find_nb, find-nb, findNb) will be an integer m and you have to return the integer n such as n^3 + (n-1)^3 + ... + 1^3 = m if such a n exists or -1 if there is no such n.
+//
+//     Examples:
+// findNb(1071225) --> 45
+// findNb(91716553919377) --> -1
+// mov rdi, 1071225
+// call find_nb            ; rax <-- 45
+//
+// mov rdi, 91716553919377
+// call find_nb            ; rax <-- -1
