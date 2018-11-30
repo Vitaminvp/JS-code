@@ -15,17 +15,16 @@ const findMaxPalindrom = () => {
         return arrOfPrimes;
     };
     const arrOfPrimes = Primes();
-    const palindroms = [];
+    const palindroms = {};
     for(let i=0; i < arrOfPrimes.length; i++){
         for(let j=i; j < arrOfPrimes.length; j++){
             const number = arrOfPrimes[i]*arrOfPrimes[j];
             if(String(number) === String(number).split('').reverse().join(''))
-                palindroms.push(number);
+                palindroms[number]=[arrOfPrimes[i], arrOfPrimes[j]];
+            };
         }
-    }
-    console.log("palindroms", palindroms[palindroms.length - 1]);
-    return Math.max(...palindroms);
-};
+    return `${palindroms[Math.max(...Object.keys(palindroms))].join(' x ')} = ${Math.max(...Object.keys(palindroms))}`;
+    };
 
 
-console.log("findMaxPalindrom", findMaxPalindrom());
+console.log(findMaxPalindrom());
