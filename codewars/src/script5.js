@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 function parse( data )
 {
     const arr =[];
@@ -19,7 +19,7 @@ function parse( data )
     return arr;
 }
 console.log("parse(\"iiisdoso\") => [ 8, 64 ]", parse("iiisdoso"));
-=======
+
 const makeChange = (amount) => {
     const result={};
     let rest = amount;
@@ -62,4 +62,4 @@ console.log(makeChange(0)); //--> {}
 console.log(makeChange(1)); //--> {"P":1}
 console.log(makeChange(43)); //--> {"Q":1,"D":1,"N":1,"P":3}
 console.log(makeChange(91));//--> {"H":1,"Q":1,"D":1,"N":1,"P":1}
->>>>>>> 57483084780168afa701ac63d47b577547242401
+

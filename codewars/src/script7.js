@@ -1,27 +1,4 @@
-<<<<<<< HEAD
-function chooseBestSum(t, k, ls) {
-    var max = 0;
-    let townsSoFar = [];
-    var recurseTowns = function(lsi=[], lastIndex = 0) {
-        townsSoFar = townsSoFar.concat(lsi);
-        console.log("townsSoFar1", townsSoFar);
-        //base case
-        if (townsSoFar.length === k) {
-            console.log("townsSoFar2", townsSoFar);
-            var sum = townsSoFar.reduce((a,b)=>a+b, 0);
-            if (sum <= t && sum > max) {
-                max = sum;
-                console.log("max", max);
-            }
-            return null; //EJECT
-        }
-        //recursive case
-        for (var i = lastIndex+1; i < ls.length; i++) {
-            recurseTowns(ls[i], i);
-        }
-    };
-    recurseTowns();
-=======
+
 function chooseBestSum(distance, number, ls) {
     const arr = [...ls];
     let max = null;
