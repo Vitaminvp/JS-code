@@ -1,55 +1,3 @@
-const budgetController = (() => {
-    const Expense = function (id, description, value) {
-        this.id = id;
-        this.description = description;
-        this.value = value;
-    };
-    const Income = function (id, description, value) {
-        this.id = id;
-        this.description = description;
-        this.value = value;
-    };
-    const calculateTotal = (type) => {
-        const summ = data.allItems[type].reduce((acc, item) => acc + item.value, 0);
-        data.totals[type] = summ;
-        return summ;
-    };
-    const data = {
-        allItems: {
-            exp: [],
-            inc: []
-        },
-        totals: {
-            exp: 0,
-            inc: 0
-        },
-        budget: 0,
-        percentage: -1
-    };
-    return {
-        addItem(type, des, value) {
-            const ID = data.allItems[type].length > 0 ? data.allItems[type][data.allItems[type].length - 1].id + 1 : 0;
-            const newItem = type === 'exp' ? new Expense(ID, des, value) : new Income(ID, des, value);
-            data.allItems[type].push(newItem);
-            return newItem;
-        },
-        calculateBudget(){
-            data.budget = calculateTotal('inc') - calculateTotal('exp');
-            data.percentage = data.totals.inc > 0 ? Math.round(data.totals.exp / data.totals.inc * 100) : -1;
-        },
-        deleteItem(type, id){
-
-        },
-        getData() {
-            return {
-                budget: data.budget,
-                totalInc: data.totals.inc,
-                totalExp: data.totals.exp,
-                percentage: data.percentage
-            };
-        }
-    }
-})();
 
 const UIController = (() => {
     const DOMelements = {
@@ -118,6 +66,68 @@ const UIController = (() => {
         }
     }
 })();
+
+const budgetController = ((UICtrl) => {
+    const Expense = function (id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    };
+    const Income = function (id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    };
+    const calculateTotal = (type) => {
+        const summ = data.allItems[type].reduce((acc, item) => acc + item.value, 0);
+        data.totals[type] = summ;
+        return summ;
+    };
+    const data = {
+        allItems: {
+            exp: [],
+            inc: []
+        },
+        totals: {
+            exp: 0,
+            inc: 0
+        },
+        budget: 0,
+        percentage: -1
+    };
+    return {
+        addItem(type, des, value) {
+            const ID = data.allItems[type].length > 0 ? data.allItems[type][data.allItems[type].length - 1].id + 1 : 0;
+            const newItem = type === 'exp' ? new Expense(ID, des, value) : new Income(ID, des, value);
+            data.allItems[type].push(newItem);
+            return newItem;
+        },
+        calculateBudget(){
+            data.budget = calculateTotal('inc') - calculateTotal('exp');
+            data.percentage = data.totals.inc > 0 ? Math.round(data.totals.exp / data.totals.inc * 100) : -1;
+        },
+        deleteItem(type, id){
+            data.allItems[type] = data.allItems[type].filter(item => parseInt(item.id) !== parseInt(id));
+            data.budget = calculateTotal('inc') - calculateTotal('exp');
+            data.percentage = data.totals.inc > 0 ? Math.round(data.totals.exp / data.totals.inc * 100) : -1;
+            UICtrl.distpayBudget({
+                budget: data.budget,
+                totalInc: data.totals.inc,
+                totalExp: data.totals.exp,
+                percentage: data.percentage
+            });
+        },
+        getData() {
+            return {
+                budget: data.budget,
+                totalInc: data.totals.inc,
+                totalExp: data.totals.exp,
+                percentage: data.percentage
+            };
+        }
+    }
+})(UIController);
+
 
 const controller = ((budgetCtrl, UICtrl) => {
     const updateBudget = () => {
