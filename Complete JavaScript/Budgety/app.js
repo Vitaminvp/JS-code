@@ -137,7 +137,7 @@ const controller = ((budgetCtrl, UICtrl) => {
     const ctrlDeleteItem = (e) => {
         if (e.target.classList.contains('ion-ios-close-outline')){
             const [type, ID] = e.target.closest('.item').id.split('-');
-            console.log("e.target", type, ID);
+            budgetCtrl.deleteItem(type, ID);
         }
     };
     const setupEventListeners = () => {
