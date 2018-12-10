@@ -7,45 +7,25 @@
 // dog.bark () === 'Dog Aban is barking'; // true
 // Задание необходимо сделать в двух вариантах: на ES5 и ES6.
 
-
-
-
-
-
-
-
-
-class Animal {
-    constructor(name = 'Aban-чик'){
-        this.name = name;
-    }
-    getName(){
-        return this.name;
-    }
-}
-class Dog extends Animal{
-    constructor(dogname){
-        super(dogname);
-    }
-    bark(){
-        return `Dog ${this.name} is barking`;
-    }
-}
-const dog = new Dog('Aban');
-console.log("dog.getName() === 'Aban'", dog.getName() === 'Aban');
-console.log("dog.bark() === 'Dog Aban is barking'", dog.bark() === 'Dog Aban is barking');
-
-
-
-
-
-
-
-
-
-
-
-
+// class Animal {
+//     constructor(name = 'Aban-чик'){
+//         this.name = name;
+//     }
+//     getName(){
+//         return this.name;
+//     }
+// }
+// class Dog extends Animal{
+//     constructor(dogname){
+//         super(dogname);
+//     }
+//     bark(){
+//         return `Dog ${this.name} is barking`;
+//     }
+// }
+// const dog = new Dog('Aban');
+// console.log("dog.getName() === 'Aban'", dog.getName() === 'Aban');
+// console.log("dog.bark() === 'Dog Aban is barking'", dog.bark() === 'Dog Aban is barking');
 
 
 function Animal(name){
