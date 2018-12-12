@@ -11,6 +11,7 @@ const controlSearch = async () => {
         searchView.clearResults();
         await state.search.getResults();
         searchView.clearInput();
+        console.log("state.search.recipes", state.search.recipes);
         searchView.renderResults(state.search.recipes);
         clearLoader();
     }
@@ -18,15 +19,15 @@ const controlSearch = async () => {
 
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
-
     controlSearch();
 });
-// elements.searchForm.addEventListener('keypress', e => {
-//     if(e.keyCode === 13) {
-//         // e.preventDefault();
-//         controlSearch();
-//     }
-// });
 
-
+elements.resultsBtnPages.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-inline');
+    if(btn){
+        const goToPage = parseInt(btn.dataSet.goto);
+        searchView.clearResults();
+        searchView.renderResults(state.search.recipes, goToPage);
+    }
+});
 
