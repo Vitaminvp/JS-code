@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {URL, KEY1, KEY2 } from '../../constants';
+import {URL, KEY1 } from '../../constants';
 
 export default class Search{
     constructor(query){

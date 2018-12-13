@@ -3,7 +3,11 @@ import { elements } from './base';
 
 export const getInput = () => elements.searchInput.value;
 export const clearInput = () => elements.searchInput.value = '';
-export const clearResults = () => elements.searchResultList.innerHTML = '';
+export const clearResults = () => {
+    elements.searchResultList.innerHTML = '';
+    elements.resultsBtnPages.innerHTML = '';
+};
+
 const limitRecipeTitle = (title, limit = 18) => {
     if(title.length >= limit){
         const arrTitle = title.split(' ');
@@ -33,13 +37,12 @@ const renderRecipes = recipe => {
     elements.searchResultList.insertAdjacentHTML('beforeend', murkup);
 };
 const createBtn = (page, type) => `
-                                    <button class="btn-inline results__btn--${ type } data-goto=${ type === 'prev' ? page - 1 : page + 1 }">
+                                    <button class="btn-inline results__btn--${ type }" data-goto=${type === 'prev' ? page - 1 : page + 1}>
                                         <span>Page ${ type === 'prev' ? page - 1 : page + 1 }</span>
                                         <svg class="search__icon">
-                                            <use href="img/icons.svg#icon-triangle-${ type === 'prev' ? 'left' : 'right' }"></use>
+                                            <use href="img/icons.svg#icon-triangle-${type === 'prev' ? 'left' : 'right'}"></use>
                                         </svg>
                                     </button>
-
                                 `;
 const renderBtn = (page, sumResults, resPerPage) => {
     const pages = Math.ceil(sumResults/resPerPage);
@@ -51,14 +54,15 @@ const renderBtn = (page, sumResults, resPerPage) => {
     }else if (page < pages){
         btn = `${createBtn(page, 'next')} ${createBtn(page, 'prev')}`;
     }
-    elements.resultsBtnPages.insertAdjacentHTML('afterbegin', btn);
+    if( sumResults > 0 )
+        elements.resultsBtnPages.insertAdjacentHTML('afterbegin', btn);
 };
-export const renderResults = (recipes, currentPage = 1, recPerPage = 10) => {
-    const start = (currentPage - 1)*recPerPage;
-    const end = currentPage*recPerPage;
-    if(recipes){
-        recipes.slice(start, end).forEach(renderRecipes);
-        renderBtn(currentPage, recipes.length, resPerPage)
-    }
 
+export const renderResults = (recipes, currentPage = 1, resPerPage = 10) => {
+    const start = (currentPage - 1)*resPerPage;
+    const end = currentPage*resPerPage;
+    if(recipes && recipes.length !== 0){
+        recipes.slice(start, end).forEach(renderRecipes);
+    }
+    renderBtn(currentPage, recipes.length, resPerPage)
 };
