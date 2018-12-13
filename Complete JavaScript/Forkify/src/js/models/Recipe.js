@@ -28,6 +28,7 @@ export default class Recipe{
     calcServings(){
         this.servings = 4;
     }
+     s.match(/^[\d,d|\\+]+/g).join(', ');
 }
 
 

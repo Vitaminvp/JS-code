@@ -7,7 +7,7 @@
 
 const checkNum = (str) => {
     const s = String(str);
-    return s.match(/[\d|.|\+]+/g).join(', ');
+    return s.match(/[\d|.\+]+/g).join(', ');
 };
 
-console.log("", checkNum('werwe446er7.4'));
+console.log("", checkNum('234sd23424werwe446er7.4sdh456 89 88  .666'));
