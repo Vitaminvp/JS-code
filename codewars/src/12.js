@@ -20,7 +20,7 @@ const checkNum = (str) => {
     "12 ounces, weight Pasta (cavitappi, Fusili, Etc.)",
     "2 whole Tomatoes, Diced"]
     return arr.map(item => ({
-        num: item.match(/^[\d|/|-| \+]+/g) ? item.match(/^[\d|/|-| \+]+/g)[0].trim() : '',
+        num: item.match(/^[\d|/|\-| \+]+/g) ? item.match(/^[\d|/|\-| \+]+/g)[0].trim() : '',
     }));
 };
 
