@@ -1,6 +1,7 @@
 import Search from './models/Search';
 import Recipe from './models/Recipe';
 import * as searchView from './views/searchView';
+import * as recipeView from './views/recipeView';
 import { elements, renderLoader, clearLoader } from './views/base';
 const state = {};
 
@@ -50,6 +51,8 @@ elements.resultsBtnPages.addEventListener('click', e => {
 const controlRecipe = async () => {
     const id = window.location.hash.replace('#', '');
     if(id){
+        recipeView.clearRecipe();
+        renderLoader(elements.recipe);
         state.recipe = new Recipe(id);
 
         // Для теста
@@ -60,6 +63,8 @@ const controlRecipe = async () => {
             state.recipe.parseIngridients();
             state.recipe.calcTime();
             state.recipe.calcServings();
+            clearLoader();
+            recipeView.renderRecipe(state.recipe);
         }catch (error){
             console.error(error);
         }

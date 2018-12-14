@@ -34,7 +34,7 @@ export default class Recipe {
 
     parseIngridients() {
         const unitsLong = ['tablespoons', 'tablespoon', 'ounces', 'ounce', 'teaspoons', 'teaspoon', 'cups', 'pounds'];
-        const unitsShort = ['tbsp', 'tbsp', 'oz', 'oz', 'tsp', 'tsp', 'cup', 'pound'];
+        const unitsShort = ['tbsp', 'tbsp', 'oz', 'oz', 'tsp', 'tsp', 'cup', 'pound', 'kg', 'g'];
         this.ingredients = this.ingredients.map(el => {
             //Удаление скобок с текстом (*)
             let ingridient = el.toLowerCase().replace(/ *\([^)]*\) */g, ' ');
