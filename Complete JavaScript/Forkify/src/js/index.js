@@ -55,12 +55,17 @@ const controlRecipe = async () => {
         renderLoader(elements.recipe);
         state.recipe = new Recipe(id);
 
+        if(state.search)
+            searchView.highlightSelected(id);
+
         // Для теста
         window.r = state.recipe;
 
         try{
             await state.recipe.getRecipe();
             state.recipe.parseIngridients();
+
+
             state.recipe.calcTime();
             state.recipe.calcServings();
             clearLoader();

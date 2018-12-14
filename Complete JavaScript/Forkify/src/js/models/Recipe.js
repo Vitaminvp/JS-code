@@ -60,7 +60,7 @@ export default class Recipe {
                         .trim()
                         .replace(' ', '+')
                         .replace('-', '+'))
-                        .toFixed(2)
+                        //.toFixed(2)
                     : '1',
                 unit: headerStr,
                 ingredient: restStr.trim()
