@@ -51,8 +51,13 @@ const controlRecipe = async () => {
     const id = window.location.hash.replace('#', '');
     if(id){
         state.recipe = new Recipe(id);
+
+        // Для теста
+        window.r = state.recipe;
+
         try{
             await state.recipe.getRecipe();
+            state.recipe.parseIngridients();
             state.recipe.calcTime();
             state.recipe.calcServings();
         }catch (error){
