@@ -28,7 +28,18 @@ export default class Recipe{
     calcServings(){
         this.servings = 4;
     }
-     s.match(/^[\d,d|\\+]+/g).join(', ');
+    parseIngridients(){
+        const unitsLong = ['tablespoons', 'tablespoon', 'ounces', 'ounce', 'teaspoons', 'teaspoon', 'cups', 'pounds'];
+        const unitsShort = ['tbsp', 'tbsp', 'oz', 'oz', 'tsp', 'tsp', 'cup', 'pound'];
+        this.ingredients = this.ingredients.map(el => {
+            let ingridient = el.toLowerCase().replace(/ *\([^)]*\) */g, '');
+            unitsLong.forEach((unit, i) => {
+                ingridient = ingridient.replace(unit, unitsShort[i]);
+            });
+            return ingridient;
+
+        });
+    }
 }
 
 
