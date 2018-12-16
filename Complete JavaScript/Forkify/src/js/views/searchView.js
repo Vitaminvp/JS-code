@@ -8,12 +8,12 @@ export const clearResults = () => {
     elements.resultsBtnPages.innerHTML = '';
 };
 export const highlightSelected = id => {
-    Array.from(document.querySelectorAll('results__link'))
+    Array.from(document.querySelectorAll('.results__link'))
         .map(el => el.classList.remove('results__link--active'));
-    document.querySelector(`a[href="#${id}"]`).classList.add('results__link--active');
+    document.querySelector(`.results__link[href="#${id}"]`).classList.add('results__link--active');
 };
 
-const limitRecipeTitle = (title, limit = 18) => {
+export const limitRecipeTitle = (title, limit = 18) => {
     if(title.length >= limit){
         const arrTitle = title.split(' ');
         let cutTitle = '';
