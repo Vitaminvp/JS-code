@@ -18,3 +18,14 @@ function handleClick() {
 }
 
 Array.from(items).forEach(item => item.addEventListener('click', handleClick));
+
+// Копирование без inputa на странице.
+// function copyToClipboard(text){
+//     var dummy = document.createElement("input");
+//     document.body.appendChild(dummy);
+//     dummy.setAttribute('value', text);
+//     dummy.select();
+//     document.execCommand("copy");
+//     document.body.removeChild(dummy);
+// }
+// copyToClipboard('Hello, World!')
