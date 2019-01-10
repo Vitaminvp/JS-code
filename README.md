@@ -20,4 +20,4 @@
 - **[rhombus](https://vitaminvp.github.io/JS-code/rectangle,triangle,rhombus/)**
 - **[rectangle](https://vitaminvp.github.io/JS-code/rectangle,triangle,rhombus/rectangle.html)**
 - **[diamond](https://vitaminvp.github.io/JS-code/rectangle,triangle,rhombus/diamond.html)**
-- **[????????? ????????? ?????? ???????? ?? ?????????](https://vitaminvp.github.io/JS-code/codewars/13.html)**
+- **[Fill a two-dimensional array with a zigzag on the diagonal](https://vitaminvp.github.io/JS-code/codewars/13.html)**

@@ -51,5 +51,5 @@ for(let i=1; i < arr.length; i++){
         }
     }
 }
-arr.forEach(item  => document.write(item+'<br>'));
+arr.forEach(item  => document.write(item+' <br>'));
 console.log("arr", arr);
