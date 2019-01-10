@@ -2,7 +2,7 @@
 ## JS lessons, code examples, projects
 # **List of projects**
 - **[Forkify](https://vitaminvp.github.io/JS-code/CompleteJavaScript/Forkify/dist)**
-- **[Budgety](https://vitaminvp.github.io/JS-code/CompleteJavaScript/Budgety/)**
+- **[Budgety](https://vitaminvp.github.io/JS-code/CompleteJavaScript/Budgety/index.html)**
 
 **List of links on my scripts**
 - **[Copy To Clipboard](https://vitaminvp.github.io/JS-code/01-CopyToClipboard)**
