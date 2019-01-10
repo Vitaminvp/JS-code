@@ -1,5 +1,9 @@
 ### JAVA SCRIPT PROJECTS
 ## JS lessons, code examples, projects
+# **List of projects**
+- **[Forkify](https://vitaminvp.github.io/JS-code/Forkify/dist)**
+- **[Budgety](https://vitaminvp.github.io/JS-code/Budgety/)**
+
 **List of links on my scripts**
 - **[Copy To Clipboard](https://vitaminvp.github.io/JS-code/01-CopyToClipboard)**
 - **[JavaScript Drum Kit](https://vitaminvp.github.io/JS-code/01-JavaScriptDrumKit)**
@@ -17,6 +21,3 @@
 - **[rectangle](https://vitaminvp.github.io/JS-code/rectangle,triangle,rhombus/rectangle.html)**
 - **[diamond](https://vitaminvp.github.io/JS-code/rectangle,triangle,rhombus/diamond.html)**
 
-**#List of projects**
-- **[Forkify](https://vitaminvp.github.io/JS-code/Forkify/dist)**
-- **[Budgety](https://vitaminvp.github.io/JS-code/Budgety/)**
