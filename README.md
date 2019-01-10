@@ -1,7 +1,7 @@
 ### JAVA SCRIPT PROJECTS
 ## JS lessons, code examples, projects
 # **List of projects**
-- **[Forkify](https://vitaminvp.github.io/JS-code/CompleteJavaScript/Forkify/dist)**
+- **[Forkify](https://vitaminvp.github.io/JS-code/CompleteJavaScript/Forkify/dist/index.html)**
 - **[Budgety](https://vitaminvp.github.io/JS-code/CompleteJavaScript/Budgety/index.html)**
 
 **List of links on my scripts**
