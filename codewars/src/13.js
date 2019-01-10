@@ -24,7 +24,7 @@ for(let i=0; i<arr.length; i++){
     }
 }
 for(let i=1; i < arr.length; i++){
-    if(arr.length === 0){
+    if(arr.length%2 !== 0){
         if( i%2 === 0 ){
             let y = i;
             for(let j = arr.length-1; j >= i; j--){
@@ -42,7 +42,6 @@ for(let i=1; i < arr.length; i++){
             for(let j = arr.length-1; j >= i; j--){
                 arr[y++][j] = count++;
             }
-
         }else {
             let y = arr.length-1;
             for(let j = i; j < arr.length; j++){
@@ -51,5 +50,8 @@ for(let i=1; i < arr.length; i++){
         }
     }
 }
-arr.forEach(item  => document.write(item+' <br>'));
-console.log("arr", arr);
+const length = (n**2).toString().length;
+console.log("length", length);
+const arr2 = arr.map(item  => item.map(elem => ('0000000' + elem).slice(-length)).join(' '));
+arr2.forEach(item => document.write(item +'<br>'));
+console.log("arr2", arr2);
