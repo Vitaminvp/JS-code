@@ -9,7 +9,7 @@ import * as searchView from './views/searchView';
 import * as recipeView from './views/recipeView';
 import { elements, renderLoader, clearLoader } from './views/base';
 const state = {};
-window.s = state;
+//window.s = state;
 /**
  * ************************************** SEARCH CONTROLLER ********************************************************
  */
@@ -66,7 +66,7 @@ const controlRecipe = async () => {
             searchView.highlightSelected(id);
 
         // Для теста
-        window.r = state.recipe;
+        //window.r = state.recipe;
 
         try{
             await state.recipe.getRecipe();
@@ -165,4 +165,4 @@ elements.recipe.addEventListener('click', e => {
        controlLike();
    }
 });
-window.l = new List();
+//window.l = new List();
