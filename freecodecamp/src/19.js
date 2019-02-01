@@ -104,18 +104,18 @@
 // ;
 // console.log("mutation", mutation(["hello", "Hello"]));
 
-var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+//var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
 
 /* This function should add a book to the list and return the list */
 // New parameters should come before the bookName one
 
 // Add your code below this line
-function add (bookList, bookName) {
-
-    return [...bookList, bookName];
-
-    // Add your code above this line
-}
+// function add (bookList, bookName) {
+//
+//     return [...bookList, bookName];
+//
+//     // Add your code above this line
+// }
 
 /* This function should remove a book from the list and return the list */
 // New parameters should come before the bookName one
@@ -137,6 +137,31 @@ function add (bookList, bookName) {
 // console.log(bookList);
 //
 // console.log("newerBookList", newerBookList);
+// the global variable
+
+// the global Array
+// var s = [23, 65, 98, 5];
+//
+// Array.prototype.myFilter = function(callback){
+//     var newArray = [];
+//     // Add your code below this line
+//     for(let i=0; i<this.length; i++){
+//         console.log("this[i]", this[i]);
+//         if(callback(this[i])){
+//             newArray.push(this[i]);
+//         }
+//     }
+//     // Add your code above this line
+//     return newArray;
+//
+// };
+//
+// var new_s = s.myFilter(function(item){
+//     return item % 2 === 1;
+// });
+//
+// console.log("new_s", new_s);
+
 // the global variable
 var watchList = [
     {
@@ -253,9 +278,15 @@ var watchList = [
 
 // Add your code below this line
 
-var filteredList = watchList.filter(item => parseInt(item["imdbRating"])>=8)
-.map(item=>({title: item["Title"], rating: item["imdbRating"]}));
+let len = watchList.length;
+console.log("len", len);
+var averageRating = 0;
+    watchList.forEach((item)=>{
+    console.log("item[imdbRating]", item["imdbRating"]);
+        averageRating += item["imdbRating"]/(watchList.length);
+
+});
 
 // Add your code above this line
 
-console.log(filteredList);
+console.log(averageRating);
