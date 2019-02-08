@@ -12,7 +12,7 @@ const comments = [
     { id: 6, parent_id: null, text: "Second reply to post." }
 ]
 
-nest(comments)
+nest(comments);
 /*
 [
   { id: 1, parent_id: null, text: "First reply to post.", children: [...] },
