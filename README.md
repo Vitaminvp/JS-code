@@ -21,3 +21,6 @@
 - **[rectangle](https://vitaminvp.github.io/JS-code/rectangle,triangle,rhombus/rectangle.html)**
 - **[diamond](https://vitaminvp.github.io/JS-code/rectangle,triangle,rhombus/diamond.html)**
 - **[Fill a two-dimensional array with a zigzag on the diagonal](https://vitaminvp.github.io/JS-code/codewars/13.html)**
+- **[Color picker div on Components](https://vitaminvp.github.io/JS-code/PDFfiller/dist/)**
+
+
