@@ -1,0 +1,23 @@
+{
+  "name": "weather-componental",
+  "version": "1.1.0",
+  "description": "Weather On Componental Steroids",
+  "main": "./index.html",
+  "author": "OleksiyRudenko <oleksiy.rudenko@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "homepage": "https://vitaminvp.github.io/Rick-and-Morty-routing/",
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "prebuild-dev": "shx rm -rf dist/",
+    "build-dev": "parcel build ./src/index.html --no-minify --public-url ./",
+    "prebuild": "shx rm -rf dist/",
+    "build": "parcel build ./src/index.html --public-url ./",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "sass": "^1.18.0",
+    "shx": "^0.3.2"
+  }
+}
