@@ -1,5 +1,5 @@
 import Component from "../Component";
-import { Element } from "../Element";
+import { Element } from "../Element/";
 import {CLASSES} from "../params";
 
 class Line extends Component{

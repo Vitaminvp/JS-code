@@ -1,6 +1,6 @@
 import Component from "../Component";
-import Line from "../Line/Line";
-import {CLASSES} from "../params";
+import { Line } from "../Line/";
+import { CLASSES } from "../params";
 
 class Lines extends Component {
     constructor(host, props) {
