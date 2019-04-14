@@ -1,4 +1,5 @@
 import Component from "../Component";
+import { DEFAULT_VALUES } from "../params";
 
 class Element extends Component{
     constructor(host, props) {
@@ -7,7 +8,7 @@ class Element extends Component{
     }
     componentWillMount(){
         this.state = {
-            color: this.props.background || 'transparent'
+            color: this.props.background || DEFAULT_VALUES.background
         }
     }
     componentDidMount(){
@@ -15,7 +16,7 @@ class Element extends Component{
                 return this.updateState({
                     color: Element.randomHsl(),
                 });
-            }, this.props.updateTime);
+            }, this.props.updateTime || DEFAULT_VALUES.delay);
     }
     static randomHsl(){
         return `hsla(${Math.random() * 360}, 100%, 50%, 1)`;
@@ -23,9 +24,8 @@ class Element extends Component{
     render(){
         const { width } = this.props;
         const fragment = document.createDocumentFragment();
-        this.host.classList.add('element');
         this.host.style.background = this.state.color;
-        this.host.style.width = width ? `${width}%` : '50px';
+        this.host.style.width = width ? `${width}%` : DEFAULT_VALUES.width;
         return fragment;
     }
 }

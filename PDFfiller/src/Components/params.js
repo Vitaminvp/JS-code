@@ -58,5 +58,38 @@ export const params = {
                 }
             ]
         },
+        {
+            background: '#F00',
+            updateTime: 1000,
+            elements: [
+                {
+                    background: '#CCC',
+                    width: 25
+                },
+                {
+                    background: '#F00',
+                    width: 20
+                },
+                {
+                    background: '#0DF',
+                    width: 35
+                },
+                {
+                    background: '#0DF',
+                    width: 15
+                }
+            ]
+        }
     ]
+};
+
+export const DEFAULT_VALUES = {
+    width: '50px',
+    background: 'transparent',
+    delay: 1000
+};
+
+export const CLASSES = {
+    element: 'element',
+    line: 'line',
 };

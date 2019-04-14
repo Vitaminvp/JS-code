@@ -1,17 +1,19 @@
 import Component from "../Component";
 import { Element } from "../Element";
+import {CLASSES} from "../params";
 
 class Line extends Component{
     constructor(host, props) {
         super(host, props);
     }
     render(){
-        const { elements } = this.props;
+        const { elements, updateTime } = this.props;
         const fragment = document.createDocumentFragment();
         if(elements && Array.isArray(elements) ) {
-            elements.forEach(props => {
+            elements.forEach(elementProps => {
                 const elementDiv = document.createElement('DIV');
-                new Element(elementDiv, {...props, updateTime: this.props.updateTime});
+                elementDiv.classList.add(CLASSES.element);
+                new Element(elementDiv, {...elementProps, updateTime });
                 fragment.appendChild(elementDiv);
             })
         }

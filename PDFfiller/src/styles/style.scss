@@ -6,12 +6,7 @@
 .line{
     display: flex;
     height: 100%;
-    & > div{
-        display: flex;
-        height: 100%;
-        width: 100%;
-    }
     & .element{
-        height: 100%;
+        transition: background-color 0.25s ease-in-out;
     }
 }

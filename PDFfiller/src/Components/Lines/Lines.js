@@ -1,5 +1,6 @@
 import Component from "../Component";
 import Line from "../Line/Line";
+import {CLASSES} from "../params";
 
 class Lines extends Component {
     constructor(host, props) {
@@ -13,13 +14,13 @@ class Lines extends Component {
 
         if(lines && Array.isArray(lines) ) {
             const Height = window.innerHeight/lines.length;
-            lines.forEach(props => {
-                if(props.elements && Array.isArray(props.elements)){
+            lines.forEach(lineProps => {
+                if(lineProps.elements && Array.isArray(lineProps.elements)){
                     const div = document.createElement('div');
-                    div.style.background = props.background;
-                    div.classList.add('line');
+                    div.style.background = lineProps.background;
+                    div.classList.add(CLASSES.line);
                     div.style.height = `${Height}px`;
-                    new Line(div, props);
+                    new Line(div, lineProps);
                     fragment.appendChild(div);
                 }
             })
