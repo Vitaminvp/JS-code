@@ -7,19 +7,16 @@ class Lines extends Component {
         super(host, props);
         this.props = props;
     }
-
     render() {
         const { lines } = this.props;
         const fragment = document.createDocumentFragment();
-
         if(lines && Array.isArray(lines) ) {
-            const Height = window.innerHeight/lines.length;
             lines.forEach(lineProps => {
                 if(lineProps.elements && Array.isArray(lineProps.elements)){
                     const div = document.createElement('div');
                     div.style.background = lineProps.background;
                     div.classList.add(CLASSES.line);
-                    div.style.height = `${Height}px`;
+                    //div.style.height = `${window.innerHeight/lines.length}px`;
                     new Line(div, lineProps);
                     fragment.appendChild(div);
                 }

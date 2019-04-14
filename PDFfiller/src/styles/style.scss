@@ -3,11 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-.line{
+#root{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  & .line{
     display: flex;
-    height: 100%;
+    flex: 1;
     & .element{
-        transition: background-color 0.25s ease-in-out;
+      transition: background-color 0.25s ease-in-out;
     }
+  }
 }
