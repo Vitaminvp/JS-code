@@ -7,10 +7,10 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  & .line{
+  .line{
     display: flex;
     flex: 1;
-    & .element{
+    &__element{
       transition: background-color 0.25s ease-in-out;
     }
   }

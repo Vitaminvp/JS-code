@@ -90,6 +90,6 @@ export const DEFAULT_VALUES = {
 };
 
 export const CLASSES = {
-    element: 'element',
     line: 'line',
+    element: 'line__element'
 };
