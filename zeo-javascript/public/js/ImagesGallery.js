@@ -13,7 +13,7 @@ window.ImageGallery = (function () {
     /**
      * @param {String} query
      */
-    search(query, searchModuleId) {
+    search(query, searchModuleId = 'pixabay') {
       const searchResults = this.imagesResolver.search(query, searchModuleId);
       this._onReceiveSearchResult(searchResults);
     }
