@@ -10,6 +10,7 @@
 
 # IDEs and editors
 /.idea
+/zeo-javascript/.idea
 .project
 .classpath
 .c9/
