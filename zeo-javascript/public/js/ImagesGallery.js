@@ -15,6 +15,7 @@ window.ImageGallery = (function () {
      */
     search(query, searchModuleId='pixabay') {
       const searchResults = this.imagesResolver.search(query, searchModuleId);
+      console.log("searchResults", searchResults);
       this._onReceiveSearchResult(searchResults);
     }
 
