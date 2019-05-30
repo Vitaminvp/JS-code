@@ -13,7 +13,7 @@ window.ImageGallery = (function () {
     /**
      * @param {String} query
      */
-    search(query, searchModuleId = 'pixabay') {
+    search(query, searchModuleId='pixabay') {
       const searchResults = this.imagesResolver.search(query, searchModuleId);
       this._onReceiveSearchResult(searchResults);
     }
@@ -29,7 +29,7 @@ window.ImageGallery = (function () {
 
     _onReceiveSearchResult(result) {
       this.searchResults.innerHTML = "";
-      const imagesInfo = result.images;
+      const imagesInfo = result ? result.images : [];
 
       imagesInfo.forEach((image) => {
         const imgNode = document.createElement('img');
