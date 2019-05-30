@@ -1,0 +1,125 @@
+.m-container {
+    padding: 0 10px 0 0;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+}
+
+#test-panel {
+    width: 500px;
+    padding-top: 100px;
+    background: #f7f7f7 url("/img/icon-logo_header.svg") center 35px no-repeat;
+}
+
+#test-panel:empty:before {
+    content: "";
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -150px 0 0 -150px;
+    background: url("/img/spiner.jpg") 0 0 no-repeat;
+    background-size: contain;
+    animation: spin 0.8s infinite linear;
+    transform-origin: 50% 50%;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.gallery {
+    flex-grow:2
+}
+
+.gallery__form {
+    padding: 30px 60px;
+}
+
+.gallery__search {
+    margin: 0 15px 0 0;
+}
+
+.gallery__result{
+    padding: 20px;
+}
+
+.gallery__result img {
+    max-width: 200px;
+    vertical-align: middle;
+    margin: 5px 10px;
+}
+
+.task{
+    padding: 10px;
+    font-size: 30px;
+    border-top: 1px solid #F1592B;
+}
+
+.task:first-child {
+    border-top: none;
+}
+
+.task .task {
+    font-size: 18px;
+    border: none;
+}
+
+.sub-task {
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+.sub-task:before,
+.sub-task:after{
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: calc(50% - 5px);
+}
+
+.sub-task.failed {
+    color: red;
+}
+.sub-task.failed:before,
+.sub-task.failed:after {
+    background: red;
+    transform-origin: 50% 50%;
+    width: 2px;
+    height: 10px;
+}
+.sub-task.failed:before {
+    transform: rotate(45deg);
+}
+.sub-task.failed:after {
+    transform: rotate(-45deg);
+
+}
+.sub-task.passed {
+    color: green;
+}
+
+.sub-task.passed:before {
+    border: 2px solid transparent;
+    border-right-color: green;
+    border-top-color: green;
+    height: 5px;
+    width: 10px;
+    right: calc(100% - 5px);
+    transform: rotate(135deg);
+}
+
+.description.top {
+    line-height: 1.2;
+}
+
+.description.top.no-tests {
+    color: green;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zeo javascript test</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="m-container js-container">
+
+</div>
+
+<!-- test engine -->
+<script src="testengine/jasmine.js"></script>
+<script src="testengine/jasmine-test-reporter.js"></script>
+<script src="testengine/TestManager.js"></script>
+<script src="testengine/tests/test1.js"></script>
+<script src="testengine/tests/test2.js"></script>
+<script src="testengine/tests/test3.js"></script>
+<script src="testengine/tests/test4.js"></script>
+<script src="testengine/tests/test5.js"></script>
+
+<!-- classes -->
+<script src="/js/ImagesResolver.js"></script>
+<script src="/js/ImagesGallery.js"></script>
+<script src="/js/local.db.js"></script>
+
+<!-- run our code -->
+<script>
+  window.onload = function () {
+    const imageResolver = window.imageResolver = new window.ImagesResolver();
+    const gallery = new window.ImageGallery(imageResolver);
+    gallery.addToElement(document.querySelector(".js-container"));
+
+    window.initiateTest();
+  };
+</script>
+</body>
+</html>
