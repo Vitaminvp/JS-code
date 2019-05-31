@@ -30,7 +30,7 @@ window.ImageGallery = (function () {
 
     _onReceiveSearchResult(result) {
       this.searchResults.innerHTML = "";
-      const imagesInfo = result ? result.images : [];
+      const imagesInfo = result.images ? result.images : [];
 
       imagesInfo.forEach((image) => {
         const imgNode = document.createElement('img');
